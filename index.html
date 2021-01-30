@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--Header and Menu Section-->
+    <header class="container">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a class="active" href="#">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Booking Section-->
+    <main class="main-content container">
+        <div class="booking-form">
+            <h3>Booking Flights</h3>
+            <div class="input-group">
+                <label for="">Flying From</label>
+                <input class="inp-style" type="text" name="" placeholder="Dhaka, Bangladesh" required>
+            </div>
+            <div class="input-group">
+                <label for="">Flying To</label>
+                <input class="inp-style" type="text" name="" placeholder="New York, United States" required>
+            </div>
+            <div class="inputs">
+                <div class="input-group">
+                    <label" for="">Departure</label>
+                    <input class="inp-style" type="date" name="" required>
+                </div>
+                <div class="input-group">
+                    <label for="">Return</label>
+                    <input class="inp-style" type="date" name="" required>
+                </div>
+            </div>
+            <div class="input-group f-class">
+                <div>
+                    <label for="">First Class ($150)</label>
+                    <input class="inp-style inp-width" type="number" id="first-class" value=0 name="" required>
+                </div>
+                <div class="plus-minus-btn">
+                    <p style="cursor:pointer;"> <span id="plusBtn">+</span> <span id="minusBtn">-</span> </p>
+
+                </div>
+            </div>
+            
+            <div class="input-group f-class">
+                <div>
+                    <label for="">Economy ($100)</label>
+                    <input class="inp-style inp-width" id="economy-class" value=0 type="number" name="" required>
+                </div>
+                <div class="plus-minus-btn">
+                    <p style="cursor:pointer"> <span id="plusBtn2">+</span> <span id="minusBtn2">-</span> </p>
+                </div>
+            </div>
+            <div class="calculations">
+                <div class="amount">
+                    <div class="left">
+                        <p>Subtotal</p>
+                    </div>
+                    <div class="right">
+                        <p>$<span id="subTotal">0</span></p>
+                    </div>
+                </div>
+
+                <div class="amount">
+                    <div class="left">
+                        <p>Vat</p>
+                    </div>
+                    <div class="right">
+                        <p>$<span id="vat">0</span></p>
+                    </div>
+                </div>
+                <hr>
+                <div class="amount">
+                    <div class="left">
+                        <h4>Total</h4>
+                    </div>
+                    <div class="right">
+                        <p>$<span id="total">0</span></p>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" id="bookBtn" class="btn-style">Book Now</button>
+        </div>
+
+        <div class="booking-content">
+            <h1>discover <br> around the world</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise voluptatibus quam</p>
+        </div>
+    </section>
+
+    <!--Thank You-->
+
+    <script>
+
+
+
+var plusBtn = document.getElementById("plusBtn");
+plusBtn.addEventListener("click",function(){
+
+var firstClass = document.getElementById("first-class").value;
+var currentFirstClass = parseFloat(firstClass);
+
+var result = currentFirstClass + 1;
+document.getElementById("first-class").value = result;
+
+var subTotal = document.getElementById("subTotal").innerText;
+var currentSubTotal = parseFloat(subTotal);
+var resultSubtotal =currentSubTotal  + 150;
+document.getElementById("subTotal").innerText = resultSubtotal;
+
+
+
+var vat = document.getElementById("vat").innerText;
+var currentVat = parseFloat("vat");
+var result3 = (resultSubtotal/100)*10
+document.getElementById("vat").innerText = result3;
+
+var total2 = document.getElementById("total").innerText;
+var currentTotal2 = parseFloat(total2);
+var resultTotal2 =result3 + resultSubtotal;
+document.getElementById("total").innerText = resultTotal2;
+})
+ 
+var minusBtn2 = document.getElementById("minusBtn2");
+minusBtn2.addEventListener("click",function(){
+
+var economyClass = document.getElementById("economy-class").value;
+var currentEconomyClass = parseFloat(economyClass);
+
+var result8 = currentEconomyClass - 1;
+document.getElementById("economy-class").value = result8;
+
+var subTotal4 = document.getElementById("subTotal").innerText;
+var currentSubTotal4 = parseFloat(subTotal4);
+var resultSubtotal4 = currentSubTotal4 - 100 ;
+document.getElementById("subTotal").innerText = resultSubtotal4;
+
+
+var vat4 = document.getElementById("vat").innerText;
+var currentVat4 = parseFloat("vat4");
+var result8 = (resultSubtotal4/100)*10
+document.getElementById("vat").innerText = result8;
+
+var total4 = document.getElementById("total").innerText;
+var currentTotal4 = parseFloat(total4);
+var resultTotal4 = result8 + resultSubtotal4;
+document.getElementById("total").innerText = resultTotal4*1;
+})
+
+
+var plusBtn2 = document.getElementById("plusBtn2");
+plusBtn2.addEventListener("click",function(){
+
+var economyClass = document.getElementById("economy-class").value;
+var currentEconomyClass = parseFloat(economyClass);
+
+var result7 = currentEconomyClass + 1;
+document.getElementById("economy-class").value = result7;
+
+var subTotal3 = document.getElementById("subTotal").innerText;
+var currentSubTotal3 = parseFloat(subTotal3);
+var multiply =currentSubTotal3 +  100;
+var resultSubtotal3 = multiply;
+document.getElementById("subTotal").innerText = resultSubtotal3;
+
+
+var vat3 = document.getElementById("vat").innerText;
+var currentVat3 = parseFloat("vat3");
+var result8 = (resultSubtotal3/100)*10
+document.getElementById("vat").innerText = result8;
+
+var total3 = document.getElementById("total").innerText;
+var currentTotal3 = parseFloat(total3);
+var resultTotal3 =  result8 + resultSubtotal3;
+document.getElementById("total").innerText = resultTotal3;
+})
+
+
+var minusBtn = document.getElementById("minusBtn");
+minusBtn.addEventListener("click",function(){
+
+var firstClass2 = document.getElementById("first-class").value;
+var currentFirstClass2 = parseFloat(firstClass2);
+
+var result2 = currentFirstClass2 - 1;
+document.getElementById("first-class").value = result2;
+
+var subTotal2 = document.getElementById("subTotal").innerText;
+var currentSubTotal2 = parseFloat(subTotal2);
+var resultSubtotal2 = currentSubTotal2 - 150;
+document.getElementById("subTotal").innerText = resultSubtotal2;
+
+
+var vat2 = document.getElementById("vat").innerText;
+var currentVat2 = parseFloat("vat2");
+var result5 =  (resultSubtotal2/100)*10
+document.getElementById("vat").innerText = result5;
+
+var total = document.getElementById("total").innerText;
+var currentTotal = parseFloat(total);
+var resultTotal = result5 + resultSubtotal2;
+document.getElementById("total").innerText = resultTotal;
+})
+
+
+var bookBtn = document.getElementById("bookBtn");
+bookBtn.addEventListener("click",function(){
+    var Total6 = document.getElementById("total").innerText;
+var currentTotal6 = parseFloat(Total6);
+var firstClasses = document.getElementById("first-class").value;
+var currentFirstClasses = parseFloat(firstClasses);
+var economyClasses = document.getElementById("economy-class").value;
+var currentEconomyClasses = parseFloat(economyClasses);
+// var vats = document.getElementById("vat").innerText;
+// var currentVats = parseFloat("vats");
+// var result5 =  (resultSubtotal2/100)*10
+// document.getElementById("vat").innerText = currentVats;
+//   document.write("TOTAL:"+currentTotal6  );
+//   document.write('First-class:'+ currentFirstClasses);
+//   document.write('ECONOMY-class:'+ currentEconomyClasses);
+alert("THANKS FOR BOOKING");
+document.write("TOTAL:"+currentTotal6 + "$"+"<br>"+'FIRST-CLASS:'+ currentFirstClasses+"sits" +"<br>"+'ECONOMY-CLASS:'+ currentEconomyClasses+"sits" ) ;
+
+})
+
+    </script>
+</body>
+
+</html>
